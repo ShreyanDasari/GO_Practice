@@ -21,8 +21,9 @@ func processFile(id int) {
 }
 
 func main() {
-	wg.Add(1)
+	
     for i := 1; i <= 1000; i++ {
+		wg.Add(1)
        go func(id int) {
            processFile(id)
 		   defer wg.Done()

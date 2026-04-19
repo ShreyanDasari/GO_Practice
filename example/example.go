@@ -14,11 +14,11 @@ func process(i int){
 	fmt.Println("Done processing", i)
 }
  func main() {
-	for i:= 1; i<=100; i++ {
+	for i:= 1; i<=5; i++ {
 		wg.Add(1)
-		go func(i int) {
+		go func(int){
 			process(i)
-			defer wg.Done()
+			wg.Done()
 		}(i)
 	}
 	wg.Wait()
