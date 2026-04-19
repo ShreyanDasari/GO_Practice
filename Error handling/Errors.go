@@ -2,6 +2,7 @@ package main
 
 import(
 	"fmt"
+	"log"
 )
 
 func add(a int, b int) (int, error){
@@ -14,7 +15,7 @@ func add(a int, b int) (int, error){
 func main(){
 	result, err := add(5, -3)
 	if err != nil {
-		fmt.Println("Error:", err)
+		log.Fatal(err)
 	} else {
 		fmt.Println("Result:", result)
 	}
